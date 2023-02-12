@@ -54,7 +54,7 @@ extension SearchViewController {
     }
     private func setupModelController() {
         modelController.delegate = self
-        modelController.fetchData(with: "Apple", page: 0)
+        modelController.fetchData(with: "Apple", page: Storyboard.pageNumber)
     }
     private func registerCollectionView() {
         photoCollectionView.dataSource = self
@@ -114,7 +114,11 @@ extension SearchViewController: SearchDelegate {
         photoCollectionView.reloadData()
     }
     func showError(with message: String) {
-        print(message)
+        AlertBuilder()
+            .title("Error")
+            .message(message)
+            .action("OK")
+            .show(self, animated: true)
     }
 }
 
@@ -140,5 +144,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         modelController.fetchData(with: "Apple", page: Storyboard.pageNumber)
+        SDImageCache.shared.clearMemory()
+        SDImageCache.shared.clearDisk()
     }
 }

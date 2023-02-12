@@ -21,13 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.viewControllers = [rootViewController]
         rootViewController.modelController = SearchModelController()
         self.window?.rootViewController = navigationController
-//        guard let rootVC = storyboard.instantiateViewController(identifier: "SearchViewController") as? SearchViewController else {
-//            print("ViewController not found")
-//            return
-//        }
-//        rootVC.modelController = SearchModelController()
-//        let rootNC = UINavigationController(rootViewController: rootVC)
-//        self.window?.rootViewController = rootNC
         self.window?.makeKeyAndVisible()
     }
 
