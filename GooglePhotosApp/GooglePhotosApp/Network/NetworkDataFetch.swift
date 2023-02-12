@@ -19,7 +19,6 @@ class NetworkDataFetch {
                 do {
                     let decoder = JSONDecoder()
                     let jsonData = try decoder.decode(ImagesResult.self, from: data)
-                    print("JSON DATA: \(jsonData)")
                     response(.success(jsonData.imagesResults))
                 } catch {
                     response(.failure(.decodeError))

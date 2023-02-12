@@ -39,7 +39,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sSw-zy-v0i" secondAttribute="bottom" id="09i-db-4Od"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sSw-zy-v0i" secondAttribute="trailing" id="3AH-yb-BhA"/>
@@ -124,11 +124,47 @@
                         <outlet property="linkLabel" destination="38w-cR-Mvx" id="jpp-fW-clf"/>
                         <outlet property="nextButton" destination="OXL-Ke-uBO" id="E7C-fL-zdX"/>
                         <outlet property="prevButton" destination="MKd-AU-8FA" id="KxT-QU-2L3"/>
+                        <segue destination="wpw-4E-OOu" kind="show" identifier="" id="E6K-GM-ksy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSt-VC-KPZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1701.5267175572519" y="-35.211267605633807"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="ZEk-yz-Lqt">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="wpw-4E-OOu" customClass="WebViewController" customModule="GooglePhotosApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ewc-pg-5EU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOi-Zo-wrc">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4gN-3O-fXQ"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HOi-Zo-wrc" firstAttribute="top" secondItem="4gN-3O-fXQ" secondAttribute="top" id="8wx-3Y-t5O"/>
+                            <constraint firstItem="4gN-3O-fXQ" firstAttribute="trailing" secondItem="HOi-Zo-wrc" secondAttribute="trailing" id="dax-jT-h9E"/>
+                            <constraint firstItem="HOi-Zo-wrc" firstAttribute="leading" secondItem="4gN-3O-fXQ" secondAttribute="leading" id="ecg-Mv-5k0"/>
+                            <constraint firstItem="4gN-3O-fXQ" firstAttribute="bottom" secondItem="HOi-Zo-wrc" secondAttribute="bottom" id="s7a-1a-N7n"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sR4-UJ-Gf6"/>
+                    <connections>
+                        <outlet property="webView" destination="HOi-Zo-wrc" id="Pal-qa-VG3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6gP-OU-y1Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2517" y="-35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bdr-61-qXB">

@@ -22,11 +22,9 @@ class SearchModelController {
         network.fetchPhoto(api: .getSearch(query: query, page: page)) { [weak self] result in
             switch result {
             case .success(let photos):
-                print("IMAGES: \(photos)")
                 self?.imagesData = photos
                 self?.delegate?.didFinished()
             case .failure(let error):
-                print("ERROR: \(error)")
                 self?.delegate?.showError(with: error.errorDescription)
             }
         }

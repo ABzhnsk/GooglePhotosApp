@@ -14,6 +14,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
     
+    struct Storyboard {
+        static let showDetailSegue = "ShowWebView"
+    }
+    
     var imageViewModel: ImageViewModel? {
         didSet {
             imageView.image = nil
@@ -24,7 +28,6 @@ class DetailViewController: UIViewController {
             }
         }
     }
-    
     var imagesData: [ImagesData]!
     var indexPage: Int = -1
     
@@ -32,14 +35,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         loadElements()
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        linkLabel.removeFromSuperview()
-        nextButton.removeFromSuperview()
-        prevButton.removeFromSuperview()
-    }
-    
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         if (indexPage + 1) < imagesData.count {
@@ -58,7 +53,6 @@ class DetailViewController: UIViewController {
         }
         loadElements()
     }
-    
 }
 
 extension DetailViewController {
@@ -66,13 +60,31 @@ extension DetailViewController {
         let images = imagesData[indexPage]
         let imageURLString = images.imageURLString
         imageViewModel = ImageViewModel(imageURL: URL(string: imageURLString)!)
-        linkLabel.text = images.source
+        setupLinkLabel(with: images.source)
+    }
+    private func setupLinkLabel(with text: String) {
+        linkLabel.text = text
+        let underlineAttriString = NSMutableAttributedString(string: text)
+        let range = (text as NSString).range(of: text)
+        underlineAttriString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
+        underlineAttriString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.link, range: range)
+        linkLabel.attributedText = underlineAttriString
+        linkLabel.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(tapLabel(gesture:)))
+        linkLabel.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func tapLabel(gesture: UITapGestureRecognizer) {
+        let source = imagesData[indexPage].link
+        let webVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        webVC.sourceURL = source
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
 }
 
 extension DetailViewController: ZoomingViewController {
     func zoomingBackgroundView(for transition: ZoomTransitioningDelegate) -> UIView? {
-        return view
+        return nil
     }
     func zoomingImageView(for transition: ZoomTransitioningDelegate) -> UIImageView? {
         return imageView

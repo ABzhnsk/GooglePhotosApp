@@ -59,14 +59,14 @@ extension ZoomTransitioningDelegate: UIViewControllerAnimatedTransitioning {
             foregroundViewController = fromViewController
         }
         
-        let maybeBackgroundImageView = (backgroundViewController as? ZoomingViewController)?.zoomingImageView(for: self)
-        let maybeForegroundImageView = (foregroundViewController as? ZoomingViewController)?.zoomingImageView(for: self)
+        let possibleBackgroundImageView = (backgroundViewController as? ZoomingViewController)?.zoomingImageView(for: self)
+        let possibleForegroundImageView = (foregroundViewController as? ZoomingViewController)?.zoomingImageView(for: self)
         
-        assert(maybeBackgroundImageView != nil, "Cannot find imageView in backgroundVC")
-        assert(maybeForegroundImageView != nil, "Cannot find imageView in foregroundVC")
+        assert(possibleBackgroundImageView != nil, "Cannot find imageView in backgroundVC")
+        assert(possibleForegroundImageView != nil, "Cannot find imageView in foregroundVC")
 
-        let backgroundImageView = maybeBackgroundImageView!
-        let foregroundImageView = maybeForegroundImageView!
+        let backgroundImageView = possibleBackgroundImageView!
+        let foregroundImageView = possibleForegroundImageView!
         
         let imageViewSnapshot = UIImageView(image: backgroundImageView.image)
         imageViewSnapshot.contentMode = .scaleAspectFill
