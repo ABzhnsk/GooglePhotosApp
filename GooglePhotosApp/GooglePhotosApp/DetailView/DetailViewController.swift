@@ -39,6 +39,26 @@ class DetailViewController: UIViewController {
         nextButton.removeFromSuperview()
         prevButton.removeFromSuperview()
     }
+    
+    
+    @IBAction func nextButtonPressed(_ sender: Any) {
+        if (indexPage + 1) < imagesData.count {
+            indexPage += 1
+        } else {
+            indexPage = 0
+        }
+        loadElements()
+    }
+    
+    @IBAction func prevButtonPressed(_ sender: Any) {
+        if (indexPage - 1) >= 0 {
+            indexPage -= 1
+        } else {
+            indexPage = imagesData.count - 1
+        }
+        loadElements()
+    }
+    
 }
 
 extension DetailViewController {

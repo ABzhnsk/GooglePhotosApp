@@ -83,6 +83,9 @@
                                 <color key="tintColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrow.right.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="mju-Ha-w2F" eventType="touchUpInside" id="GKy-a9-qus"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKd-AU-8FA">
                                 <rect key="frame" x="16" y="435.66666666666669" width="50" height="50"/>
@@ -93,6 +96,9 @@
                                 <color key="tintColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrow.left.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="prevButtonPressed:" destination="mju-Ha-w2F" eventType="touchUpInside" id="zSG-2I-Cq3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Xm-0p-EfZ"/>
