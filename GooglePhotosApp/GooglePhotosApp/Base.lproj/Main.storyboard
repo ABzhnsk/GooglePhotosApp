@@ -12,7 +12,7 @@
         <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="GooglePhotosApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="BYZ-38-t0r" customClass="SearchViewController" customModule="GooglePhotosApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cvA-Dw-dWI">
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchCollectionViewCell" id="cvA-Dw-dWI" customClass="SearchCollectionViewCell" customModule="GooglePhotosApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gbx-ad-1i9">
@@ -50,16 +50,84 @@
                     <navigationItem key="navigationItem" id="Lce-HH-kxQ"/>
                     <connections>
                         <outlet property="photoCollectionView" destination="sSw-zy-v0i" id="np6-ia-lZt"/>
+                        <segue destination="mju-Ha-w2F" kind="show" identifier="ShowDetail" id="Yf7-AK-kRD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942.74809160305335" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="929" y="-35"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="b29-S1-SFO">
+            <objects>
+                <viewController id="mju-Ha-w2F" customClass="DetailViewController" customModule="GooglePhotosApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ITl-Zh-JWa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QAG-G4-9ir">
+                                <rect key="frame" x="0.0" y="303" width="393" height="315"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38w-cR-Mvx">
+                                <rect key="frame" x="16" y="764" width="377" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXL-Ke-uBO">
+                                <rect key="frame" x="327" y="435.66666666666669" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MJt-Zy-WbS"/>
+                                    <constraint firstAttribute="width" constant="50" id="cna-oM-meT"/>
+                                </constraints>
+                                <color key="tintColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.right.circle.fill" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKd-AU-8FA">
+                                <rect key="frame" x="16" y="435.66666666666669" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="6g2-Xg-vpn"/>
+                                    <constraint firstAttribute="height" constant="50" id="nG3-w3-GZf"/>
+                                </constraints>
+                                <color key="tintColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.left.circle.fill" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Xm-0p-EfZ"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QAG-G4-9ir" firstAttribute="trailing" secondItem="9Xm-0p-EfZ" secondAttribute="trailing" id="23n-jA-BRx"/>
+                            <constraint firstItem="MKd-AU-8FA" firstAttribute="leading" secondItem="9Xm-0p-EfZ" secondAttribute="leading" constant="16" id="2yL-L5-4h3"/>
+                            <constraint firstItem="9Xm-0p-EfZ" firstAttribute="bottom" secondItem="38w-cR-Mvx" secondAttribute="bottom" constant="30" id="4Ca-hI-tXI"/>
+                            <constraint firstItem="OXL-Ke-uBO" firstAttribute="centerY" secondItem="9Xm-0p-EfZ" secondAttribute="centerY" id="75U-D8-wDh"/>
+                            <constraint firstItem="QAG-G4-9ir" firstAttribute="leading" secondItem="9Xm-0p-EfZ" secondAttribute="leading" id="EPX-hQ-Uh3"/>
+                            <constraint firstItem="QAG-G4-9ir" firstAttribute="top" secondItem="9Xm-0p-EfZ" secondAttribute="top" constant="200" id="Irq-cm-5LJ"/>
+                            <constraint firstItem="38w-cR-Mvx" firstAttribute="leading" secondItem="9Xm-0p-EfZ" secondAttribute="leading" constant="16" id="KYO-OF-CvW"/>
+                            <constraint firstItem="QAG-G4-9ir" firstAttribute="centerX" secondItem="9Xm-0p-EfZ" secondAttribute="centerX" id="Nbw-Fd-bhw"/>
+                            <constraint firstItem="MKd-AU-8FA" firstAttribute="centerY" secondItem="9Xm-0p-EfZ" secondAttribute="centerY" id="S0d-NZ-NTe"/>
+                            <constraint firstItem="9Xm-0p-EfZ" firstAttribute="trailing" secondItem="OXL-Ke-uBO" secondAttribute="trailing" constant="16" id="cIA-cg-73z"/>
+                            <constraint firstItem="QAG-G4-9ir" firstAttribute="centerY" secondItem="9Xm-0p-EfZ" secondAttribute="centerY" id="iU3-gj-Tri"/>
+                            <constraint firstItem="9Xm-0p-EfZ" firstAttribute="trailing" secondItem="38w-cR-Mvx" secondAttribute="trailing" id="smd-dT-CK2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oBI-lx-fGx"/>
+                    <connections>
+                        <outlet property="imageView" destination="QAG-G4-9ir" id="Ult-Wh-MDD"/>
+                        <outlet property="linkLabel" destination="38w-cR-Mvx" id="jpp-fW-clf"/>
+                        <outlet property="nextButton" destination="OXL-Ke-uBO" id="E7C-fL-zdX"/>
+                        <outlet property="prevButton" destination="MKd-AU-8FA" id="KxT-QU-2L3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FSt-VC-KPZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1701.5267175572519" y="-35.211267605633807"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bdr-61-qXB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X3B-yN-YD5" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="X3B-yN-YD5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1LK-PJ-RPd">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -67,15 +135,22 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
+                        <outlet property="delegate" destination="mRJ-MQ-Wyq" id="ZdE-VD-7Ho"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KlQ-1C-GOD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqf-OS-sLM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="mRJ-MQ-Wyq" customClass="ZoomTransitioningDelegate" customModule="GooglePhotosApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="16.030534351145036" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.left.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="arrow.right.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

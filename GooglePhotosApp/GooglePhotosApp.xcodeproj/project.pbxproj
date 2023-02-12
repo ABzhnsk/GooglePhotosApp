@@ -3,22 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D4FAC7090582B782F6602FD /* Pods_GooglePhotosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9421FD9C8C29587887EAA82A /* Pods_GooglePhotosApp.framework */; };
 		B14B31B82990088700CD57C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14B31B72990088700CD57C2 /* AppDelegate.swift */; };
 		B14B31BA2990088700CD57C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14B31B92990088700CD57C2 /* SceneDelegate.swift */; };
 		B14B31BC2990088700CD57C2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14B31BB2990088700CD57C2 /* SearchViewController.swift */; };
 		B14B31BF2990088700CD57C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14B31BD2990088700CD57C2 /* Main.storyboard */; };
 		B14B31C12990088900CD57C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B14B31C02990088900CD57C2 /* Assets.xcassets */; };
 		B14B31C42990088900CD57C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14B31C22990088900CD57C2 /* LaunchScreen.storyboard */; };
+		B18009A42997C846000E7C28 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18009A32997C846000E7C28 /* Secrets.swift */; };
+		B18009A72997E536000E7C28 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18009A62997E536000E7C28 /* DetailViewController.swift */; };
+		B18009A92997F0D9000E7C28 /* ZoomingTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18009A82997F0D9000E7C28 /* ZoomingTransitionDelegate.swift */; };
+		B18009B029994275000E7C28 /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18009AF29994275000E7C28 /* ImageViewModel.swift */; };
+		B19DEC6429956CAA001B17A4 /* SearchModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19DEC6329956CAA001B17A4 /* SearchModelController.swift */; };
+		B19F885E2994473B00681F13 /* ImagesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19F885D2994473B00681F13 /* ImagesResult.swift */; };
+		B19F886029944A6200681F13 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19F885F29944A6200681F13 /* API.swift */; };
+		B19F886229944B5D00681F13 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19F886129944B5D00681F13 /* APIError.swift */; };
+		B19F886429944B8600681F13 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19F886329944B8600681F13 /* NetworkRequest.swift */; };
+		B19F886629944E2000681F13 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19F886529944E2000681F13 /* NetworkDataFetch.swift */; };
 		B1C305282990323400DA224F /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C305262990323400DA224F /* SearchCollectionViewCell.swift */; };
 		B1C3052C299033BB00DA224F /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3052B299033BB00DA224F /* ReusableViewProtocol.swift */; };
 		B1C3052E299035A800DA224F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3052D299035A800DA224F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C7B75B8379830D03199BAA0 /* Pods-GooglePhotosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePhotosApp.release.xcconfig"; path = "Target Support Files/Pods-GooglePhotosApp/Pods-GooglePhotosApp.release.xcconfig"; sourceTree = "<group>"; };
+		9421FD9C8C29587887EAA82A /* Pods_GooglePhotosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GooglePhotosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14B31B42990088700CD57C2 /* GooglePhotosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GooglePhotosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14B31B72990088700CD57C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B14B31B92990088700CD57C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,9 +40,20 @@
 		B14B31C02990088900CD57C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B14B31C32990088900CD57C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B14B31C52990088900CD57C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B18009A32997C846000E7C28 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		B18009A62997E536000E7C28 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B18009A82997F0D9000E7C28 /* ZoomingTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomingTransitionDelegate.swift; sourceTree = "<group>"; };
+		B18009AF29994275000E7C28 /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		B19DEC6329956CAA001B17A4 /* SearchModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModelController.swift; sourceTree = "<group>"; };
+		B19F885D2994473B00681F13 /* ImagesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesResult.swift; sourceTree = "<group>"; };
+		B19F885F29944A6200681F13 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B19F886129944B5D00681F13 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		B19F886329944B8600681F13 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		B19F886529944E2000681F13 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		B1C305262990323400DA224F /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1C3052B299033BB00DA224F /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		B1C3052D299035A800DA224F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C02D6774F482D0065B87EC5A /* Pods-GooglePhotosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePhotosApp.debug.xcconfig"; path = "Target Support Files/Pods-GooglePhotosApp/Pods-GooglePhotosApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +61,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D4FAC7090582B782F6602FD /* Pods_GooglePhotosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		189B4694158D923AF7DD9D43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C02D6774F482D0065B87EC5A /* Pods-GooglePhotosApp.debug.xcconfig */,
+				7C7B75B8379830D03199BAA0 /* Pods-GooglePhotosApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B14B31AB2990088700CD57C2 = {
 			isa = PBXGroup;
 			children = (
 				B14B31B62990088700CD57C2 /* GooglePhotosApp */,
 				B14B31B52990088700CD57C2 /* Products */,
+				189B4694158D923AF7DD9D43 /* Pods */,
+				CEE56959AEBB199B02DDF88D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,12 +101,52 @@
 				B1C30523299031B400DA224F /* SettingsApp */,
 				B1C3052A299033A600DA224F /* Helpers */,
 				B1C30524299031C700DA224F /* SearchView */,
+				B18009A52997E4FF000E7C28 /* DetailView */,
+				B19DEC6229956BAA001B17A4 /* ModelController */,
+				B19F885C2994471300681F13 /* Network */,
+				B18009A02996A8B6000E7C28 /* Extensions */,
 				B14B31BD2990088700CD57C2 /* Main.storyboard */,
 				B14B31C02990088900CD57C2 /* Assets.xcassets */,
 				B14B31C22990088900CD57C2 /* LaunchScreen.storyboard */,
 				B14B31C52990088900CD57C2 /* Info.plist */,
 			);
 			path = GooglePhotosApp;
+			sourceTree = "<group>";
+		};
+		B18009A02996A8B6000E7C28 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B18009A52997E4FF000E7C28 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				B18009A62997E536000E7C28 /* DetailViewController.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		B19DEC6229956BAA001B17A4 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				B19DEC6329956CAA001B17A4 /* SearchModelController.swift */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		B19F885C2994471300681F13 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B19F885D2994473B00681F13 /* ImagesResult.swift */,
+				B19F885F29944A6200681F13 /* API.swift */,
+				B19F886129944B5D00681F13 /* APIError.swift */,
+				B19F886329944B8600681F13 /* NetworkRequest.swift */,
+				B19F886529944E2000681F13 /* NetworkDataFetch.swift */,
+				B18009A32997C846000E7C28 /* Secrets.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		B1C30523299031B400DA224F /* SettingsApp */ = {
@@ -104,8 +180,18 @@
 			children = (
 				B1C3052B299033BB00DA224F /* ReusableViewProtocol.swift */,
 				B1C3052D299035A800DA224F /* Constants.swift */,
+				B18009A82997F0D9000E7C28 /* ZoomingTransitionDelegate.swift */,
+				B18009AF29994275000E7C28 /* ImageViewModel.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CEE56959AEBB199B02DDF88D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9421FD9C8C29587887EAA82A /* Pods_GooglePhotosApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,9 +201,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B14B31C82990088900CD57C2 /* Build configuration list for PBXNativeTarget "GooglePhotosApp" */;
 			buildPhases = (
+				FC63E81B401B1504BCDE7724 /* [CP] Check Pods Manifest.lock */,
 				B14B31B02990088700CD57C2 /* Sources */,
 				B14B31B12990088700CD57C2 /* Frameworks */,
 				B14B31B22990088700CD57C2 /* Resources */,
+				BFB89B9F40B946C29838B11A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,7 +232,7 @@
 				};
 			};
 			buildConfigurationList = B14B31AF2990088700CD57C2 /* Build configuration list for PBXProject "GooglePhotosApp" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -174,17 +262,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BFB89B9F40B946C29838B11A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePhotosApp/Pods-GooglePhotosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePhotosApp/Pods-GooglePhotosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GooglePhotosApp/Pods-GooglePhotosApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC63E81B401B1504BCDE7724 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GooglePhotosApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B14B31B02990088700CD57C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B18009A92997F0D9000E7C28 /* ZoomingTransitionDelegate.swift in Sources */,
+				B18009A72997E536000E7C28 /* DetailViewController.swift in Sources */,
 				B14B31BC2990088700CD57C2 /* SearchViewController.swift in Sources */,
 				B1C3052C299033BB00DA224F /* ReusableViewProtocol.swift in Sources */,
+				B19F885E2994473B00681F13 /* ImagesResult.swift in Sources */,
+				B18009B029994275000E7C28 /* ImageViewModel.swift in Sources */,
+				B19F886229944B5D00681F13 /* APIError.swift in Sources */,
+				B18009A42997C846000E7C28 /* Secrets.swift in Sources */,
 				B14B31B82990088700CD57C2 /* AppDelegate.swift in Sources */,
 				B1C305282990323400DA224F /* SearchCollectionViewCell.swift in Sources */,
 				B14B31BA2990088700CD57C2 /* SceneDelegate.swift in Sources */,
+				B19F886629944E2000681F13 /* NetworkDataFetch.swift in Sources */,
 				B1C3052E299035A800DA224F /* Constants.swift in Sources */,
+				B19DEC6429956CAA001B17A4 /* SearchModelController.swift in Sources */,
+				B19F886429944B8600681F13 /* NetworkRequest.swift in Sources */,
+				B19F886029944A6200681F13 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +466,7 @@
 		};
 		B14B31C92990088900CD57C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C02D6774F482D0065B87EC5A /* Pods-GooglePhotosApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -337,8 +478,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,6 +495,7 @@
 		};
 		B14B31CA2990088900CD57C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C7B75B8379830D03199BAA0 /* Pods-GooglePhotosApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -365,8 +507,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

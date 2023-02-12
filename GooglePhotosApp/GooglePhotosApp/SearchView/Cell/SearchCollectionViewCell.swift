@@ -8,9 +8,6 @@
 import UIKit
 
 class SearchCollectionViewCell: UICollectionViewCell {
-
-    var onReuse: () -> Void = {}
-    
     let imageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.contentMode = .scaleAspectFill
@@ -18,15 +15,21 @@ class SearchCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    var imageViewModel: ImageViewModel? {
+        didSet {
+            imageView.image = nil
+            imageViewModel?.getImage { [weak self] image in
+                DispatchQueue.main.async {
+                    self?.imageView.image = image
+                }
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
-    }
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        onReuse()
-        imageView.image = nil
     }
     
     required init?(coder: NSCoder) {
