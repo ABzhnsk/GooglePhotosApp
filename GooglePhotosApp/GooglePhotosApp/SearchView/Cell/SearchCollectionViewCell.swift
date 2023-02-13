@@ -14,12 +14,19 @@ class SearchCollectionViewCell: UICollectionViewCell {
         imageView.backgroundColor = .systemGray
         return imageView
     }()
+    let activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }()
     
     var imageViewModel: ImageViewModel? {
         didSet {
             imageView.image = nil
+            activityIndicator.startAnimating()
             imageViewModel?.getImage { [weak self] image in
                 DispatchQueue.main.async {
+                    self?.activityIndicator.stopAnimating()
                     self?.imageView.image = image
                 }
             }
@@ -40,6 +47,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = Constants.viewCornerRadius
         contentView.addSubview(imageView)
+        contentView.addSubview(activityIndicator)
     }
     private func setupConstraints() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -48,6 +56,11 @@ class SearchCollectionViewCell: UICollectionViewCell {
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor)
+        ])
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
     }
 }

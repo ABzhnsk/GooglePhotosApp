@@ -59,7 +59,8 @@ extension DetailViewController {
     private func loadElements() {
         let images = imagesData[indexPage]
         let imageURLString = images.imageURLString
-        imageViewModel = ImageViewModel(imageURL: URL(string: imageURLString)!)
+        guard let imageURL = URL(string: imageURLString) else { return }
+        imageViewModel = ImageViewModel(imageURL: imageURL)
         setupLinkLabel(with: images.source)
     }
     private func setupLinkLabel(with text: String) {

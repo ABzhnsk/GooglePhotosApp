@@ -72,7 +72,8 @@ extension SearchViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as? SearchCollectionViewCell
         else { return UICollectionViewCell() }
         let imageURLString = modelController.imagesData[indexPath.item].imageURLString
-        let imageViewModel = ImageViewModel(imageURL: URL(string: imageURLString)!)
+        guard let imageURL = URL(string: imageURLString) else { return cell }
+        let imageViewModel = ImageViewModel(imageURL: imageURL)
         cell.imageViewModel = imageViewModel
         return cell
     }
@@ -80,14 +81,9 @@ extension SearchViewController: UICollectionViewDataSource {
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = itemWidth(for: view.frame.width, spacing: Constants.spacing)
-        return CGSize(width: width, height: width)
-    }
-    func itemWidth(for width: CGFloat, spacing: CGFloat) -> CGFloat {
-        let itemsInRow: CGFloat = Storyboard.numberOfItemsPerRow
-        let totalSpacing: CGFloat = 2 * spacing + (itemsInRow - 1) * spacing
-        let finalWidth = (width - totalSpacing) / itemsInRow
-        return floor(finalWidth)
+        let collectionViewWidth = collectionView.frame.width
+        let itemWidth = (collectionViewWidth - 3 * Constants.spacing) / Storyboard.numberOfItemsPerRow
+        return CGSize(width: itemWidth, height: itemWidth)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: Constants.spacing,
@@ -102,9 +98,8 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
         return Constants.spacing
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let imagesData = modelController.imagesData
         self.selectedIndexPath = indexPath
-        performSegue(withIdentifier: Storyboard.showDetailSegue, sender: imagesData)
+        performSegue(withIdentifier: Storyboard.showDetailSegue, sender: modelController.imagesData)
     }
     
 }
